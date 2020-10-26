@@ -55,12 +55,12 @@
   import getUserInputType from '../../utils/getUserInputType';
 
   export default {
-    name: 'bot',
+    name: 'Bot',
     components: {
       BotAction, BotFarmingInfo, BotGames, BotLink,
     },
     computed: {
-      ...mapGetters({ 
+      ...mapGetters({
         nicknames: 'settings/nicknames',
         headless: 'asf/headless',
       }),

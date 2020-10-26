@@ -14,7 +14,7 @@
 
 <script>
   export default {
-    name: 'modal',
+    name: 'Modal',
     computed: {
       isShown() {
         return !!this.$route.meta.modal;

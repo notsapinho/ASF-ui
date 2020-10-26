@@ -38,7 +38,7 @@
   import prepareModelToDownload from '../../utils/prepareModelToDownload';
 
   export default {
-    name: 'bot-config',
+    name: 'BotConfig',
     components: { ConfigEditor },
     data() {
       const categories = [

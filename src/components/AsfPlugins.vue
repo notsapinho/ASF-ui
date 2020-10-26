@@ -19,7 +19,7 @@
 
 <script>
   export default {
-    name: 'asf-plugins',
+    name: 'AsfPlugins',
     data() {
       return {
         loading: true,

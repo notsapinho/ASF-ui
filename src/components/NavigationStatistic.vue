@@ -10,7 +10,7 @@
 
 <script>
   export default {
-    name: 'navigation-statistic',
+    name: 'NavigationStatistic',
     props: {
       name: {
         required: true,

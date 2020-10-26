@@ -8,7 +8,7 @@
       <div class="form-item__code">
         <div>
           <label for="input" class="form-item__label">{{ $t(`input-label-${inputType}`) }}</label>
-          <input id="input" class="form-item__input" type="password" autocomplete="new-password" v-model="code" />
+          <input id="input" v-model="code" class="form-item__input" type="password" autocomplete="new-password">
         </div>
         <div class="form-item__buttons form-item__buttons--column">
           <button class="button button--helper" :title="$t('input-switch-visibility')" @click="switchInputType">
@@ -32,7 +32,7 @@
   import getUserInputType from '../../utils/getUserInputType';
 
   export default {
-    name: 'bot-input',
+    name: 'BotInput',
     data() {
       return {
         submitting: false,

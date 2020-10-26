@@ -20,7 +20,7 @@
   import Flag from './utils/Flag.vue';
 
   export default {
-    name: 'navigation-language-switch',
+    name: 'NavigationLanguageSwitch',
     components: { Flag },
     computed: {
       ...mapGetters({

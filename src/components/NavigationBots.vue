@@ -14,7 +14,7 @@
   import FitText from './utils/FitText.vue';
 
   export default {
-    name: 'navigation-bots',
+    name: 'NavigationBots',
     components: { FitText },
     data() {
       return {

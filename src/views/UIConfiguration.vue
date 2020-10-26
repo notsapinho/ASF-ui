@@ -16,7 +16,7 @@
   import ConfigEditor from '../components/ConfigEditor.vue';
 
   export default {
-    name: 'ui-configuration',
+    name: 'UiConfiguration',
     metaInfo() {
       return {
         title: this.$t('ui-configuration'),

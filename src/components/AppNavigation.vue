@@ -40,7 +40,7 @@
   import NavigationStatistics from './NavigationStatistics.vue';
 
   export default {
-    name: 'app-navigation',
+    name: 'AppNavigation',
     components: {
       NavigationLink, NavigationCategoryTitle, NavigationStatistics, NavigationBots,
     },

@@ -12,7 +12,7 @@
 
 <script>
   export default {
-    name: 'side-menu-switch',
+    name: 'SideMenuSwitch',
     props: {
       name: {
         type: String,

@@ -19,7 +19,7 @@
   import SideMenuSwitch from './SideMenuSwitch.vue';
 
   export default {
-    name: 'app-side-menu',
+    name: 'AppSideMenu',
     components: { SideMenuSwitch },
     computed: mapGetters({
       sideMenu: 'layout/sideMenu',

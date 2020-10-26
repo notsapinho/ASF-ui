@@ -11,7 +11,7 @@
   import NavigationStatistic from './NavigationStatistic.vue';
 
   export default {
-    name: 'navigation-statistics',
+    name: 'NavigationStatistics',
     components: { NavigationStatistic },
     computed: mapGetters({
       memory: 'asf/memory',

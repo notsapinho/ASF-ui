@@ -32,7 +32,7 @@
   import { get } from '../../utils/storage';
 
   export default {
-    name: 'bot-copy',
+    name: 'BotCopy',
     components: { ConfigEditor },
     data() {
       const categories = [

@@ -30,7 +30,7 @@
   import { STATUS } from '../utils/getStatus';
 
   export default {
-    name: 'setup',
+    name: 'Setup',
     metaInfo() {
       return {
         title: this.$t('setup'),

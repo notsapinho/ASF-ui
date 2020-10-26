@@ -26,7 +26,7 @@
   import BgrKeys from './Keys.vue';
 
   export default {
-    name: 'bgr-summary',
+    name: 'BgrSummary',
     components: { BgrKeys },
     props: {
       keys: Object,

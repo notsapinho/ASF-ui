@@ -7,7 +7,7 @@
 
 <script>
   export default {
-    name: 'bot-action',
+    name: 'BotAction',
     props: {
       icon: String,
       name: String,

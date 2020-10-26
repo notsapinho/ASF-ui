@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: 'footer-link',
+    name: 'FooterLink',
     props: {
       name: {
         required: true,

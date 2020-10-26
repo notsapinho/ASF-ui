@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'input-label',
+    name: 'InputLabel',
     props: {
       label: String,
       field: String,

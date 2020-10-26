@@ -37,7 +37,7 @@
   ];
 
   export default {
-    name: 'bot-card',
+    name: 'BotCard',
     props: {
       bot: Object,
     },
@@ -84,7 +84,7 @@
             this.$router.push({ name: 'bot-input', params: { bot: this.bot.name, type: inputType } });
             return;
           }
-          
+
           await this.$http.botAction(this.bot.name, 'start');
           await this.$store.dispatch('bots/updateBot', { name: this.bot.name, active: true });
         } catch (err) {

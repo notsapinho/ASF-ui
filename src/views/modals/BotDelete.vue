@@ -23,7 +23,7 @@
   import delay from '../../utils/delay';
 
   export default {
-    name: 'bot-delete',
+    name: 'BotDelete',
     data() {
       return {
         deleting: false,

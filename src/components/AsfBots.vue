@@ -16,7 +16,7 @@
   import BotCard from './BotCard.vue';
 
   export default {
-    name: 'asf-bots',
+    name: 'AsfBots',
     components: { BotCard },
     computed: {
       ...mapGetters({

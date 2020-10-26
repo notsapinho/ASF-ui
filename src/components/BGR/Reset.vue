@@ -21,7 +21,7 @@
 
 <script>
   export default {
-    name: 'bgr-reset',
+    name: 'BgrReset',
     props: {
       resetting: Boolean,
       title: String,

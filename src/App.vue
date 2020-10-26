@@ -23,7 +23,7 @@
   import AppModal from './components/AppModal.vue';
 
   export default {
-    name: 'app',
+    name: 'App',
     metaInfo: {
       title: 'ArchiSteamFarm',
       titleTemplate: 'ASF | %s',

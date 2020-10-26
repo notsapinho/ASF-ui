@@ -38,7 +38,7 @@
   import delay from '../../utils/delay';
 
   export default {
-    name: 'bot-2fa',
+    name: 'Bot2fa',
     data() {
       return {
         accepting: false,

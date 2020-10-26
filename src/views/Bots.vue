@@ -10,7 +10,7 @@
   import AsfBots from '../components/AsfBots.vue';
 
   export default {
-    name: 'bots-overview',
+    name: 'BotsOverview',
     metaInfo() {
       return {
         title: this.$t('bots'),

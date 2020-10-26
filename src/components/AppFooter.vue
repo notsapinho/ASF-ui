@@ -22,7 +22,7 @@
   import { get } from '../utils/storage';
 
   export default {
-    name: 'app-footer',
+    name: 'AppFooter',
     components: { FooterLink },
     data() {
       return {

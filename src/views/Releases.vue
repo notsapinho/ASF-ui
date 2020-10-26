@@ -10,7 +10,7 @@
   import AsfReleases from '../components/AsfReleases.vue';
 
   export default {
-    name: 'releases',
+    name: 'Releases',
     metaInfo() {
       return {
         title: this.$t('releases'),

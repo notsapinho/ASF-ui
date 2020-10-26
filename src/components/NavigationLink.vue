@@ -7,7 +7,7 @@
 
 <script>
   export default {
-    name: 'navigation-link',
+    name: 'NavigationLink',
     props: {
       name: {
         required: true,

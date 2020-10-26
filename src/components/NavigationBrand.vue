@@ -34,7 +34,7 @@
   import waitForRestart from '../utils/waitForRestart';
 
   export default {
-    name: 'navigation-brand',
+    name: 'NavigationBrand',
     data() {
       return {
         brandMenu: false,

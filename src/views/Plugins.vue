@@ -10,7 +10,7 @@
   import AsfPlugins from '../components/AsfPlugins.vue';
 
   export default {
-    name: 'plugins',
+    name: 'Plugins',
     metaInfo() {
       return {
         title: this.$t('plugins'),

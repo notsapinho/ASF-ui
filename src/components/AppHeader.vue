@@ -26,7 +26,7 @@
   import NavigationLanguageSwitch from './NavigationLanguageSwitch.vue';
 
   export default {
-    name: 'app-header',
+    name: 'AppHeader',
     components: { NavigationBrand, NavigationLanguageSwitch },
     computed: {
       ...mapGetters({

@@ -7,7 +7,7 @@
 
 <script>
   export default {
-    name: 'bot-link',
+    name: 'BotLink',
     props: {
       icon: String,
       name: String,

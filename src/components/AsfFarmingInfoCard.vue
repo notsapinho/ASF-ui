@@ -16,7 +16,7 @@
 
 <script>
   export default {
-    name: 'asf-farming-info-card',
+    name: 'AsfFarmingInfoCard',
     props: {
       icon: String,
       value: {},

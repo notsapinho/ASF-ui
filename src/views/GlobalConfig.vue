@@ -36,7 +36,7 @@
   import waitForRestart from '../utils/waitForRestart';
 
   export default {
-    name: 'global-config',
+    name: 'GlobalConfig',
     metaInfo() {
       return {
         title: this.$t('global-config'),

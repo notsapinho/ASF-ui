@@ -32,7 +32,7 @@
   import ConfigCategory from './ConfigCategory.vue';
 
   export default {
-    name: 'config-editor',
+    name: 'ConfigEditor',
     components: { ConfigCategory },
     props: {
       fields: {

@@ -36,7 +36,7 @@
   import botExists from '../../utils/botExists';
 
   export default {
-    name: 'bot-create',
+    name: 'BotCreate',
     components: { ConfigEditor },
     data() {
       const categories = [

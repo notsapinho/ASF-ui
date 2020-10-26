@@ -27,7 +27,7 @@
   import BgrKeys from './Keys.vue';
 
   export default {
-    name: 'bgr-check',
+    name: 'BgrCheck',
     components: { BgrKeys },
     props: {
       keys: Object,

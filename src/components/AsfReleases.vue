@@ -30,7 +30,7 @@
   import compareVersion from '../utils/compareVersion';
 
   export default {
-    name: 'asf-releases',
+    name: 'AsfReleases',
     data() {
       return {
         loading: true,

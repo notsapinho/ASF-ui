@@ -27,7 +27,7 @@
   import validator from '../../utils/validator';
 
   export default {
-    name: 'input-tag',
+    name: 'InputTag',
     mixins: [Input],
     data() {
       return {

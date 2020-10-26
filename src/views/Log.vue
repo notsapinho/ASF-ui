@@ -10,7 +10,7 @@
   import AsfLog from '../components/AsfLog.vue';
 
   export default {
-    name: 'log',
+    name: 'Log',
     metaInfo() {
       return {
         title: this.$t('log'),
