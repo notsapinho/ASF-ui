@@ -55,7 +55,7 @@
 </script>
 
 <style lang="scss">
-	.bgr__summary-title {
-		margin-bottom: 0.5em;
-	}
+  .bgr__summary-title {
+    margin-bottom: 0.5em;
+  }
 </style>

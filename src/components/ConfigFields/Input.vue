@@ -10,7 +10,10 @@
         type: Object,
         required: true,
       },
-      currentValue: true,
+      currentValue: {
+        type: Boolean,
+        default: true,
+      },
     },
     data() {
       const initialValue = typeof this.currentValue !== 'undefined' ? this.currentValue : this.schema.defaultValue;

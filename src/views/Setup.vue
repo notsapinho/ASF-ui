@@ -113,11 +113,11 @@
 </script>
 
 <style lang="scss">
-	.status-text {
-		text-align: center;
-	}
+  .status-text {
+    text-align: center;
+  }
 
-	.status-text--error {
-		color: var(--color-button-cancel);
-	}
+  .status-text--error {
+    color: var(--color-button-cancel);
+  }
 </style>

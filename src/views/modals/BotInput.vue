@@ -80,6 +80,8 @@
           this.submit();
           return e.preventDefault();
         }
+
+        return e;
       },
       async submit() {
         if (this.submitting) return;
