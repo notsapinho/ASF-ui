@@ -39,9 +39,6 @@
     }],
     "linebreak-style": "off",
     "quote-props": ["warn", "consistent-as-needed"],
-    "no-tabs": ["warn", {
-      "allowIndentationTabs": true
-    }],
     "no-use-before-define": ["warn", {
       "functions": false
     }],
