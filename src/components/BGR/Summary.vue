@@ -5,7 +5,7 @@
     </h3>
 
     <div class="form-item">
-      <bgr-keys :keys="keys"></bgr-keys>
+      <BgrKeys :keys="keys" />
     </div>
 
     <div class="form-item">

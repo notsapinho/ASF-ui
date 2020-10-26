@@ -9,7 +9,7 @@ export async function newReleaseAvailable() {
   const latestReleaseRaw = await http.post('www/send', { url: `https://api.github.com/repos/JustArchiNET/ArchiSteamFarm/${updateChannel}` });
   const latestReleaseVersion = JSON.parse(latestReleaseRaw);
 
-  if (!latestReleaseVersion) return;
+  if (!latestReleaseVersion) return false;
 
   const latestVersion = (asf.updateChannel === UPDATECHANNEL.EXPERIMENTAL) ? latestReleaseVersion[0].tag_name : latestReleaseVersion.tag_name;
   set('latest-release', latestVersion);

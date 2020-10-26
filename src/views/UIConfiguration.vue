@@ -1,11 +1,13 @@
 <template>
   <main class="main-container main-container--fullheight">
     <div class="container">
-      <config-editor v-if="displayCategories" :fields="fields" :categories="categories" :model="model"></config-editor>
-      <config-editor v-else :fields="fields" :model="model"></config-editor>
+      <ConfigEditor v-if="displayCategories" :fields="fields" :categories="categories" :model="model" />
+      <ConfigEditor v-else :fields="fields" :model="model" />
 
       <div class="form-item">
-        <button class="button button--confirm" @click="save">{{ $t('save') }}</button>
+        <button class="button button--confirm" @click="save">
+          {{ $t('save') }}
+        </button>
       </div>
     </div>
   </main>

@@ -1,30 +1,34 @@
 <template>
   <main v-if="bot" class="main-container">
-    <h2 v-if="bot.nickname && nicknames" class="title">{{ bot.nickname }}</h2>
-    <h2 v-else class="title">{{ bot.name }}</h2>
+    <h2 v-if="bot.nickname && nicknames" class="title">
+      {{ bot.nickname }}
+    </h2>
+    <h2 v-else class="title">
+      {{ bot.name }}
+    </h2>
 
-    <span v-if="!has2FA" v-html="$t('2fa-not-found')"></span>
+    <span v-if="!has2FA" v-html="$t('2fa-not-found')" />
 
     <div v-else class="form-item">
       <div class="form-item__token">
         <input class="form-item__input form-item__input-token" type="text" :value="token" readonly>
         <div class="form-item__buttons form-item__buttons--column">
           <button class="button button--helper" :title="$t('2fa-token-refresh')" @click="refreshToken">
-            <font-awesome-icon v-if="refreshing" icon="spinner" size="lg" spin></font-awesome-icon>
-            <font-awesome-icon v-else icon="redo-alt" size="lg"></font-awesome-icon>
+            <FontAwesomeIcon v-if="refreshing" icon="spinner" size="lg" spin />
+            <FontAwesomeIcon v-else icon="redo-alt" size="lg" />
           </button>
           <button class="button button--helper" :title="$t('2fa-token-copy')" @click="copyToken">
-            <font-awesome-icon icon="clipboard" size="lg"></font-awesome-icon>
+            <FontAwesomeIcon icon="clipboard" size="lg" />
           </button>
         </div>
       </div>
       <div class="form-item__buttons form-item__buttons--center form-item__buttons--column">
         <button class="button button--confirm" @click="acceptConfirmations">
-          <font-awesome-icon v-if="accepting" icon="spinner" spin></font-awesome-icon>
+          <FontAwesomeIcon v-if="accepting" icon="spinner" spin />
           <span v-else>{{ $t('2fa-accept') }}</span>
         </button>
         <button class="button button--cancel" @click="rejectConfirmations">
-          <font-awesome-icon v-if="rejecting" icon="spinner" spin></font-awesome-icon>
+          <FontAwesomeIcon v-if="rejecting" icon="spinner" spin />
           <span v-else>{{ $t('2fa-reject') }}</span>
         </button>
       </div>

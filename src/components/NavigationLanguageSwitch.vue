@@ -1,16 +1,16 @@
 <template>
   <div class="navigation__language-switch">
     <div class="navigation__button" @click="toggleLanguageMenu">
-      <font-awesome-icon class="navigation__language-icon" icon="language" fixed-width></font-awesome-icon>
+      <FontAwesomeIcon class="navigation__language-icon" icon="language" fixed-width />
     </div>
 
-    <transition name="navigation__language-picker">
+    <Transition name="navigation__language-picker">
       <div v-if="languageMenu" class="navigation__language-picker">
         <div v-for="locale in $i18n.availableLocales" :key="locale" class="navigation__language" :class="{ 'navigation__language--active': $i18n.locale === locale }" @click.prevent="changeLocale(locale)">
-          <flag :country="getFlagCountry(locale)" :title="locale"></flag>
+          <Flag :country="getFlagCountry(locale)" :title="locale" />
         </div>
       </div>
-    </transition>
+    </Transition>
   </div>
 </template>
 

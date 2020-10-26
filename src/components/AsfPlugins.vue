@@ -1,7 +1,7 @@
 <template>
   <div class="plugins">
     <h3 v-if="loading" class="subtitle">
-      <font-awesome-icon icon="spinner" size="lg" spin></font-awesome-icon>
+      <FontAwesomeIcon icon="spinner" size="lg" spin />
     </h3>
 
     <h3 v-if="statusText" class="subtitle">

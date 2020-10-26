@@ -3,28 +3,28 @@
     <span class="brand__name brand__name--small"><b>A</b>SF</span>
     <span class="brand__name brand__name--big"><b>Archi</b>SteamFarm</span>
     <div v-if="authenticated" class="brand__icon">
-      <font-awesome-icon v-if="brandMenu" icon="times"></font-awesome-icon>
-      <font-awesome-icon v-else icon="angle-down"></font-awesome-icon>
+      <FontAwesomeIcon v-if="brandMenu" icon="times" />
+      <FontAwesomeIcon v-else icon="angle-down" />
     </div>
 
-    <transition name="brand__menu">
+    <Transition name="brand__menu">
       <div v-if="brandMenu && authenticated" class="brand__menu">
         <div v-if="updateChannel !== 0" class="brand__menu-item" @click="update">
-          <font-awesome-icon class="brand__menu-icon" icon="cloud-download-alt" fixed-width></font-awesome-icon>
+          <FontAwesomeIcon class="brand__menu-icon" icon="cloud-download-alt" fixed-width />
           <span>{{ $t('update') }}</span>
         </div>
 
         <div class="brand__menu-item" @click="restart">
-          <font-awesome-icon class="brand__menu-icon" icon="undo-alt" fixed-width></font-awesome-icon>
+          <FontAwesomeIcon class="brand__menu-icon" icon="undo-alt" fixed-width />
           <span>{{ $t('restart') }}</span>
         </div>
 
         <div class="brand__menu-item" @click="shutdown">
-          <font-awesome-icon class="brand__menu-icon" icon="power-off" fixed-width></font-awesome-icon>
+          <FontAwesomeIcon class="brand__menu-icon" icon="power-off" fixed-width />
           <span>{{ $t('shutdown') }}</span>
         </div>
       </div>
-    </transition>
+    </Transition>
   </div>
 </template>
 

@@ -1,12 +1,22 @@
 <template>
   <main class="main-container main-container--center">
     <div class="container container--small">
-      <h2 class="title">{{ $t('setup') }}</h2>
+      <h2 class="title">
+        {{ $t('setup') }}
+      </h2>
 
-      <p v-if="status === 'NOT_CONNECTED'" class="status-text status-text--error">{{ $t('setup-not-connected') }}</p>
-      <p v-if="status === 'RATE_LIMITED'" class="status-text status-text--error">{{ $t('setup-rate-limited') }}</p>
-      <p v-if="status === 'AUTHENTICATED'" class="status-text">{{ $t('setup-authenticated') }}</p>
-      <p v-if="status === 'UNAUTHORIZED'" class="status-text">{{ $t('setup-description') }}</p>
+      <p v-if="status === 'NOT_CONNECTED'" class="status-text status-text--error">
+        {{ $t('setup-not-connected') }}
+      </p>
+      <p v-if="status === 'RATE_LIMITED'" class="status-text status-text--error">
+        {{ $t('setup-rate-limited') }}
+      </p>
+      <p v-if="status === 'AUTHENTICATED'" class="status-text">
+        {{ $t('setup-authenticated') }}
+      </p>
+      <p v-if="status === 'UNAUTHORIZED'" class="status-text">
+        {{ $t('setup-description') }}
+      </p>
 
       <div v-if="status === 'UNAUTHORIZED'" class="form-item">
         <label for="password" class="form-item__label">{{ $t('password') }}</label>
@@ -16,7 +26,7 @@
       <div class="form-item">
         <div class="form-item__buttons form-item__buttons--center">
           <button class="button button--confirm" @click="onButtonClick">
-            <font-awesome-icon v-if="processing" icon="spinner" spin></font-awesome-icon>
+            <FontAwesomeIcon v-if="processing" icon="spinner" spin />
             <span v-else>{{ buttonText }}</span>
           </button>
         </div>

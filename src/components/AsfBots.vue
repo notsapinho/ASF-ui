@@ -1,13 +1,13 @@
 <template>
   <div class="bots">
-    <bot-card v-for="bot in bots" v-if="bot.isVisible(selectedBots)" :key="bot.name" :bot="bot"></bot-card>
+    <BotCard v-for="bot in bots" v-if="bot.isVisible(selectedBots)" :key="bot.name" :bot="bot" />
 
-    <router-link tag="div" :to="{ name: 'bot-create' }" class="bot-placeholder status--disabled" :class="{ 'bot-placeholder--big': selectedButtonsCount > 2 }">
+    <RouterLink tag="div" :to="{ name: 'bot-create' }" class="bot-placeholder status--disabled" :class="{ 'bot-placeholder--big': selectedButtonsCount > 2 }">
       <div class="bot-placeholder__button bot-placeholder__button--add">
-        <font-awesome-icon icon="plus" class="bot-placeholder__icon"></font-awesome-icon>
+        <FontAwesomeIcon icon="plus" class="bot-placeholder__icon" />
         <span class="bot-placeholder__name">{{ $t('bot-new') }}</span>
       </div>
-    </router-link>
+    </RouterLink>
   </div>
 </template>
 

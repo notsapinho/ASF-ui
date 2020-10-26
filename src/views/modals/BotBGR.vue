@@ -1,34 +1,40 @@
 <template>
   <main v-if="bot" class="main-container">
-    <h2 v-if="bot.nickname && nicknames" class="title">{{ bot.nickname }}</h2>
-    <h2 v-else class="title">{{ bot.name }}</h2>
+    <h2 v-if="bot.nickname && nicknames" class="title">
+      {{ bot.nickname }}
+    </h2>
+    <h2 v-else class="title">
+      {{ bot.name }}
+    </h2>
 
     <h3 v-if="loading" class="subtitle">
-      <font-awesome-icon icon="spinner" size="lg" spin></font-awesome-icon>
+      <FontAwesomeIcon icon="spinner" size="lg" spin />
     </h3>
 
-    <bgr-status v-if="!loading && state === 'input'" :used-keys="usedKeys" :unused-keys="unusedKeys" @reset="showReset" @show-unused="state = 'unusedKeys'" @show-used="state = 'usedKeys'"></bgr-status>
+    <BgrStatus v-if="!loading && state === 'input'" :used-keys="usedKeys" :unused-keys="unusedKeys" @reset="showReset" @show-unused="state = 'unusedKeys'" @show-used="state = 'usedKeys'" />
 
     <div v-if="!loading && state === 'input' && bot.bgrCount !== 0" class="bgr__info">
       <div v-if="bot.isConnected" class="bgr__info-icon">
-        <font-awesome-layers class="hourglass-spin">
-          <font-awesome-icon icon="hourglass-start"></font-awesome-icon>
-          <font-awesome-icon icon="hourglass-half"></font-awesome-icon>
-          <font-awesome-icon icon="hourglass-end"></font-awesome-icon>
-          <font-awesome-icon icon="hourglass-end" spin></font-awesome-icon>
-        </font-awesome-layers>
+        <FontAwesomeLayers class="hourglass-spin">
+          <FontAwesomeIcon icon="hourglass-start" />
+          <FontAwesomeIcon icon="hourglass-half" />
+          <FontAwesomeIcon icon="hourglass-end" />
+          <FontAwesomeIcon icon="hourglass-end" spin />
+        </FontAwesomeLayers>
       </div>
-      <p class="subtitle">{{ backgroundQueueText }}</p>
+      <p class="subtitle">
+        {{ backgroundQueueText }}
+      </p>
     </div>
 
-    <keep-alive>
-      <bgr-input v-if="state === 'input'" @check="onCheck"></bgr-input>
-      <bgr-check v-if="state === 'check'" :keys="keys" :title="$t('bgr-check', { n: foundKeysCount })" :bot="bot" :confirming="confirming" @confirm="onConfirm" @cancel="onCancel"></bgr-check>
-      <bgr-reset v-if="state === 'reset'" :title="$t('bgr-reset')" :resetting="resetting" @reset="onReset" @cancel="onCancel"></bgr-reset>
-      <bgr-summary v-if="state === 'summary'" :keys="summaryKeys" :title="$t('bgr-summary-success', { n: addedKeysCount })" @back="$parent.back()"></bgr-summary>
-      <bgr-summary v-if="state === 'usedKeys'" :keys="usedKeys" :title="$t('bgr-used-keys')" @back="state = 'input'"></bgr-summary>
-      <bgr-summary v-if="state === 'unusedKeys'" :keys="unusedKeys" :title="$t('bgr-unused-keys')" @back="state = 'input'"></bgr-summary>
-    </keep-alive>
+    <KeepAlive>
+      <BgrInput v-if="state === 'input'" @check="onCheck" />
+      <BgrCheck v-if="state === 'check'" :keys="keys" :title="$t('bgr-check', { n: foundKeysCount })" :bot="bot" :confirming="confirming" @confirm="onConfirm" @cancel="onCancel" />
+      <BgrReset v-if="state === 'reset'" :title="$t('bgr-reset')" :resetting="resetting" @reset="onReset" @cancel="onCancel" />
+      <BgrSummary v-if="state === 'summary'" :keys="summaryKeys" :title="$t('bgr-summary-success', { n: addedKeysCount })" @back="$parent.back()" />
+      <BgrSummary v-if="state === 'usedKeys'" :keys="usedKeys" :title="$t('bgr-used-keys')" @back="state = 'input'" />
+      <BgrSummary v-if="state === 'unusedKeys'" :keys="unusedKeys" :title="$t('bgr-unused-keys')" @back="state = 'input'" />
+    </KeepAlive>
   </main>
 </template>
 

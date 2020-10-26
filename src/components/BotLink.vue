@@ -1,8 +1,8 @@
 <template>
-  <router-link v-show="visible" tag="div" class="bot-action" :to="link">
+  <RouterLink v-show="visible" tag="div" class="bot-action" :to="link">
     <span v-if="name" class="bot-action__label">{{ name }}</span>
-    <font-awesome-icon v-if="icon" class="bot-action__icon" :icon="icon"></font-awesome-icon>
-  </router-link>
+    <FontAwesomeIcon v-if="icon" class="bot-action__icon" :icon="icon" />
+  </RouterLink>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
   <main class="main-container main-container--fullheight bots-overview">
-    <asf-farming-info></asf-farming-info>
-    <asf-bots></asf-bots>
+    <AsfFarmingInfo />
+    <AsfBots />
   </main>
 </template>
 
@@ -21,10 +21,10 @@
 </script>
 
 <style lang="scss">
-	.bots-overview {
-		display: grid;
-		grid-gap: 1rem;
-		grid-template-columns: 1fr;
-		grid-template-rows: min-content min-content;
-	}
+  .bots-overview {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content;
+  }
 </style>

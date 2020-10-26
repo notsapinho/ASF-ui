@@ -1,11 +1,11 @@
 <template>
   <span>
-    <slot></slot>
+    <slot />
   </span>
 </template>
 
 <script>
-	// https://github.com/robbeman/vue-fit-text
+  // https://github.com/robbeman/vue-fit-text
 
   export default {
     name: 'FitText',
@@ -62,8 +62,7 @@
           fontSize -= stepSize;
           element.style.fontSize = fontSize + this.unit;
         }
-        // found it!!
-        // reset the styles
+        // found it! now reset the styles
         element.style.display = null;
         element.style.lineHeight = null;
       },

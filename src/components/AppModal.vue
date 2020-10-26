@@ -1,15 +1,15 @@
 <template>
-  <transition name="modal" duration="200" appear>
+  <Transition name="modal" duration="200" appear>
     <div v-if="isShown" class="modal">
-      <div class="modal__background" @click.self="close"></div>
+      <div class="modal__background" @click.self="close" />
       <div class="modal__body">
-        <font-awesome-icon icon="times" class="modal__close" @click="close"></font-awesome-icon>
+        <FontAwesomeIcon icon="times" class="modal__close" @click="close" />
         <div class="modal__main">
-          <router-view ref="modal" name="modal"></router-view>
+          <RouterView ref="modal" name="modal" />
         </div>
       </div>
     </div>
-  </transition>
+  </Transition>
 </template>
 
 <script>

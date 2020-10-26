@@ -1,23 +1,27 @@
 <template>
   <main v-if="bot" class="main-container main-container--bot-copy">
-    <h2 class="title">{{ $t('bot-new') }}</h2>
+    <h2 class="title">
+      {{ $t('bot-new') }}
+    </h2>
 
     <div class="container">
-      <p class="container-description">{{ $t('bot-new-copy', {name: bot.name}) }}</p>
+      <p class="container-description">
+        {{ $t('bot-new-copy', {name: bot.name}) }}
+      </p>
 
-      <config-editor v-if="displayCategories" :fields="fields" :model="model" :categories="categories"></config-editor>
-      <config-editor v-else :fields="fields" :model="model"></config-editor>
+      <ConfigEditor v-if="displayCategories" :fields="fields" :model="model" :categories="categories" />
+      <ConfigEditor v-else :fields="fields" :model="model" />
 
       <div class="form-item">
         <div class="form-item__buttons">
           <button class="button button--confirm" @click="onCreate">
-            <font-awesome-icon v-if="creating" icon="spinner" spin></font-awesome-icon>
+            <FontAwesomeIcon v-if="creating" icon="spinner" spin />
             <span v-else>{{ $t('create') }}</span>
           </button>
 
-          <router-link tag="button" class="button button--cancel pull-right" :to="{ name: 'bot-config', params: { bot: bot.name } }">
+          <RouterLink tag="button" class="button button--cancel pull-right" :to="{ name: 'bot-config', params: { bot: bot.name } }">
             {{ $t('cancel') }}
-          </router-link>
+          </RouterLink>
         </div>
       </div>
     </div>

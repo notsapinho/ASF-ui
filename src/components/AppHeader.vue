@@ -1,20 +1,20 @@
 <template>
   <header class="upper-navigation">
-    <navigation-brand></navigation-brand>
+    <NavigationBrand />
 
     <div class="navigation__button" @click="toggleNavigation">
-      <font-awesome-icon icon="bars" fixed-width></font-awesome-icon>
+      <FontAwesomeIcon icon="bars" fixed-width />
     </div>
 
     <div class="navigation__menu">
       <div v-if="status === 'AUTHENTICATED' && password" class="navigation__button" @click="logout">
-        <font-awesome-icon icon="sign-out-alt" fixed-width></font-awesome-icon>
+        <FontAwesomeIcon icon="sign-out-alt" fixed-width />
       </div>
 
-      <navigation-language-switch></navigation-language-switch>
+      <NavigationLanguageSwitch />
 
       <div class="navigation__button" @click="toggleSideMenu">
-        <font-awesome-icon icon="cogs" fixed-width></font-awesome-icon>
+        <FontAwesomeIcon icon="cogs" fixed-width />
       </div>
     </div>
   </header>

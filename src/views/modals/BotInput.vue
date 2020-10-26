@@ -1,10 +1,16 @@
 <template>
   <main v-if="bot" class="main-container">
-    <h2 v-if="bot.nickname && nicknames" class="title">{{ bot.nickname }}</h2>
-    <h2 v-else class="title">{{ bot.name }}</h2>
+    <h2 v-if="bot.nickname && nicknames" class="title">
+      {{ bot.nickname }}
+    </h2>
+    <h2 v-else class="title">
+      {{ bot.name }}
+    </h2>
 
     <div class="form-item">
-      <div class="form-item__info">{{ $t(`input-info-${inputType}`) }}</div>
+      <div class="form-item__info">
+        {{ $t(`input-info-${inputType}`) }}
+      </div>
       <div class="form-item__code">
         <div>
           <label for="input" class="form-item__label">{{ $t(`input-label-${inputType}`) }}</label>
@@ -12,14 +18,14 @@
         </div>
         <div class="form-item__buttons form-item__buttons--column">
           <button class="button button--helper" :title="$t('input-switch-visibility')" @click="switchInputType">
-            <font-awesome-icon v-if="inputHidden" icon="eye" size="lg"></font-awesome-icon>
-            <font-awesome-icon v-else icon="eye-slash" size="lg"></font-awesome-icon>
+            <FontAwesomeIcon v-if="inputHidden" icon="eye" size="lg" />
+            <FontAwesomeIcon v-else icon="eye-slash" size="lg" />
           </button>
         </div>
       </div>
       <div class="form-item__buttons form-item__buttons--center">
         <button class="button button--confirm" @click="submit">
-          <font-awesome-icon v-if="submitting" icon="spinner" spin></font-awesome-icon>
+          <FontAwesomeIcon v-if="submitting" icon="spinner" spin />
           <span v-else>{{ $t('input-submit') }}</span>
         </button>
       </div>

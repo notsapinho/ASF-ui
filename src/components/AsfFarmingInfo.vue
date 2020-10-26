@@ -1,8 +1,8 @@
 <template>
   <div class="info-cards">
-    <asf-farming-info-card :title="$t('farming-info-games')" :value="gamesRemaining" icon="gamepad"></asf-farming-info-card>
-    <asf-farming-info-card :title="$t('farming-info-time')" :value="timeRemaining" icon="clock"></asf-farming-info-card>
-    <asf-farming-info-card :title="$t('farming-info-cards')" :value="cardsRemaining" icon="clone"></asf-farming-info-card>
+    <AsfFarmingInfoCard :title="$t('farming-info-games')" :value="gamesRemaining" icon="gamepad" />
+    <AsfFarmingInfoCard :title="$t('farming-info-time')" :value="timeRemaining" icon="clock" />
+    <AsfFarmingInfoCard :title="$t('farming-info-cards')" :value="cardsRemaining" icon="clone" />
   </div>
 </template>
 

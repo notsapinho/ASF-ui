@@ -1,12 +1,16 @@
 <template>
   <main v-if="bot" class="main-container main-container--bot-profile">
-    <h2 v-if="bot.nickname && nicknames" class="title">{{ $t('bot-delete', { name: bot.nickname }) }}</h2>
-    <h2 v-else class="title">{{ $t('bot-delete', { name: bot.name }) }}</h2>
+    <h2 v-if="bot.nickname && nicknames" class="title">
+      {{ $t('bot-delete', { name: bot.nickname }) }}
+    </h2>
+    <h2 v-else class="title">
+      {{ $t('bot-delete', { name: bot.name }) }}
+    </h2>
 
     <div class="form-item">
       <div class="form-item__buttons form-item__buttons--center">
         <button class="button button--cancel" @click="onDelete">
-          <font-awesome-icon v-if="deleting" icon="spinner" spin></font-awesome-icon>
+          <FontAwesomeIcon v-if="deleting" icon="spinner" spin />
           <span v-else>{{ $t('delete') }}</span>
         </button>
 

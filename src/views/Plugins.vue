@@ -1,7 +1,7 @@
 <template>
   <main class="main-container main-container--fullheight">
     <div class="container">
-      <asf-plugins></asf-plugins>
+      <AsfPlugins />
     </div>
   </main>
 </template>

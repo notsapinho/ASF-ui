@@ -1,8 +1,8 @@
 <template>
-  <router-link :to="to" :href="$router.resolve(to).href" class="navigation-link" active-class="navigation-link--active" :exact="true">
-    <span v-if="icon" class="navigation-link__icon"><font-awesome-icon :icon="icon" fixed-width></font-awesome-icon></span>
+  <RouterLink :to="to" :href="$router.resolve(to).href" class="navigation-link" active-class="navigation-link--active" :exact="true">
+    <span v-if="icon" class="navigation-link__icon"><FontAwesomeIcon :icon="icon" fixed-width /></span>
     <span class="navigation-link__name">{{ name }}</span>
-  </router-link>
+  </RouterLink>
 </template>
 
 <script>

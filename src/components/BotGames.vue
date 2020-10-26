@@ -1,7 +1,7 @@
 <template>
   <div v-if="bot.games.length && botsFarmingCount !== 0" :class="[gameName ? 'bot-games-text' : 'bot-games']">
     <template v-if="gameName">
-      <div v-html="games"></div>
+      <div v-html="games" />
     </template>
 
     <template v-else>

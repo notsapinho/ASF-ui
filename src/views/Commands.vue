@@ -4,7 +4,7 @@
       <div ref="terminal" class="terminal" @click="focusInput">
         <div v-for="({ type, time, message }, i) in log" :key="i" class="terminal-message">
           <span v-if="timestamps" class="terminal-message__time timestamp">[{{ time }}]</span>
-          <span class="terminal-message__sign" :class="`terminal-message__sign--${type}`" v-text="type === 'out' ? '>' : '<'"></span>
+          <span class="terminal-message__sign" :class="`terminal-message__sign--${type}`" v-text="type === 'out' ? '>' : '<'" />
           <span class="terminal-message__content">{{ message }}</span>
         </div>
         <div class="terminal__input-wrapper">
@@ -121,13 +121,13 @@
       allCommandsParameters() {
         return this.allCommands.map(({ command }) => command.split(' '))
           .map(([command, ...params]) => ({ command, params }))
-          .reduce((commandParameters, { command, params }) => (commandParameters[command] = params, commandParameters), {});
+          .reduce((commandParameters, { command, params }) => (commandParameters[command] = params, commandParameters, {}));
       },
       autocompleteSuggestion() {
         if (this.suggestedCommand) return this.command.replace(/./g, ' ') + this.suggestedCommand.substr(this.command.length);
 
         if (this.selectedCommand) {
-          if (!this.suggestedParameters || !this.suggestedParameters.length) return;
+          if (!this.suggestedParameters || !this.suggestedParameters.length) return '';
 
           if (this.suggestedParameterValue) {
             return [
@@ -143,9 +143,10 @@
             + (this.currentParameterValue.length ? ' ' : '')
             + remainingParameters.join(' ');
         }
+        return '';
       },
       suggestedCommand() {
-        if (!this.command) return;
+        if (!this.command) return null;
         return this.allCommandsNames.find(command => command.startsWith(this.command));
       },
       suggestedParameters() {
@@ -157,13 +158,14 @@
         return this.command.split(' ').length - 1;
       },
       currentParameter() {
-        if (!this.suggestedParameters.length) return;
+        if (!this.suggestedParameters.length) return null;
 
         const currentParameter = this.suggestedParameters[this.currentParameterIndex - 1];
         if (currentParameter) return currentParameter;
 
         const lastParameter = this.suggestedParameters[this.suggestedParameters.length - 1];
         if (lastParameter.substr(-2, 1) === 's') return lastParameter;
+        return null;
       },
       currentParameterValue() {
         if (this.currentParameter && this.currentParameter.substr(-2, 1) === 's') {
@@ -174,13 +176,13 @@
         return this.command.split(' ')[this.currentParameterIndex];
       },
       suggestedParameterValue() {
-        if (!this.currentParameterValue || !this.currentParameterValue.length) return;
-        if (!this.currentParameter) return;
+        if (!this.currentParameterValue || !this.currentParameterValue.length) return null;
+        if (!this.currentParameter) return null;
 
         switch (this.currentParameter.toLowerCase()) {
           case '[bot]':
           case '[bots]':
-          case '<targetbot>':
+          case '<targetbot>': {
             const suggestedBot = [...this.$store.getters['bots/bots'].map(bot => bot.name), 'ASF']
               .find(name => name.startsWith(this.currentParameterValue));
 
@@ -188,6 +190,7 @@
 
             return [...this.$store.getters['bots/bots'].map(bot => bot.name), 'ASF']
               .find(name => name.toLowerCase().startsWith(this.currentParameterValue.toLowerCase()));
+          }
           case '<command>':
             return this.allCommandsNames.find(name => name.startsWith(this.currentParameterValue));
           case '<modes>':
@@ -201,21 +204,22 @@
                 .find(name => name.toLowerCase().startsWith(this.currentParameterValue.toLowerCase()));
             }
 
-            return;
+            return null;
           case '<type>':
-            if (this.selectedCommand !== 'input') return;
+            if (this.selectedCommand !== 'input') return null;
 
             return ['DeviceID', 'Login', 'Password', 'SteamGuard', 'SteamParentalCode', 'TwoFactorAuthentication']
               .find(name => name.toLowerCase().startsWith(this.currentParameterValue.toLowerCase()));
           case '<settings>':
-            if (this.selectedCommand !== 'privacy') return;
+            if (this.selectedCommand !== 'privacy') return null;
 
             return ['Private', 'FriendsOnly', 'Public']
               .find(name => name.toLowerCase().startsWith(this.currentParameterValue.toLowerCase()));
         }
+        return null;
       },
       selectedCommand() {
-        if (!this.command) return;
+        if (!this.command) return null;
         return this.allCommandsNames.find(command => command === this.command.split(' ')[0]);
       },
     },
@@ -265,7 +269,7 @@
             if (commandToExecute.split(' ')[1]) return this.commandHelp(commandToExecute.split(' ')[1]);
             return this.$t('terminal-help-text');
           case 'clear':
-            return this.log = [];
+            this.log = [];
         }
 
         return this.$http.command(commandToExecute);
@@ -337,7 +341,6 @@
         const len = this.command.length;
 
         if (el.setSelectionRange) setTimeout(() => el.setSelectionRange(len, len), 0);
-        else this.command = this.command;
       },
       parseCommandsHTML(commandsWikiRaw) {
         const virtualDOM = createVirtualDOM(commandsWikiRaw);
@@ -372,20 +375,20 @@
 </script>
 
 <style lang="scss">
-	.commands {
-		display: grid;
-		grid-template-rows: 1fr;
+  .commands {
+    display: grid;
+    grid-template-rows: 1fr;
 
-		> div {
-			min-height: 0;
-		}
-	}
+    > div {
+      min-height: 0;
+    }
+  }
 
-	.sign-input {
-		cursor: pointer;
-	}
+  .sign-input {
+    cursor: pointer;
+  }
 
-	.timestamp {
-		margin-right: 0.5em;
-	}
+  .timestamp {
+    margin-right: 0.5em;
+  }
 </style>

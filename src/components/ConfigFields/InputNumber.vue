@@ -1,13 +1,13 @@
 <template>
   <div class="form-item">
-    <input-label :label="label" :has-description="hasDescription"></input-label>
+    <InputLabel :label="label" :has-description="hasDescription" />
 
     <div class="form-item__value">
       <input :id="field" v-model.number="value" class="form-item__input" type="number" :name="field" :placeholder="placeholder" @blur="onBlur">
       <span v-if="hasErrors" class="form-item__error">{{ errorText }}</span>
     </div>
 
-    <input-description v-if="hasDescription" v-show="showDescription" :description="description"></input-description>
+    <InputDescription v-if="hasDescription" v-show="showDescription" :description="description" />
   </div>
 </template>
 

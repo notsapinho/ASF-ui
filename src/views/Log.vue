@@ -1,7 +1,7 @@
 <template>
   <main class="main-container main-container--fullheight log">
     <div class="container">
-      <asf-log></asf-log>
+      <AsfLog />
     </div>
   </main>
 </template>
@@ -21,12 +21,12 @@
 </script>
 
 <style lang="scss">
-	.log {
-		display: grid;
-		grid-template-rows: 1fr;
+  .log {
+    display: grid;
+    grid-template-rows: 1fr;
 
-		> div {
-			min-height: 0;
-		}
-	}
+    > div {
+      min-height: 0;
+    }
+  }
 </style>

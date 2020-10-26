@@ -1,25 +1,29 @@
 <template>
   <main v-if="bot" class="main-container main-container--bot-configuration">
-    <h2 v-if="bot.nickname && nicknames" class="title">{{ bot.nickname }}</h2>
-    <h2 v-else class="title">{{ bot.name }}</h2>
+    <h2 v-if="bot.nickname && nicknames" class="title">
+      {{ bot.nickname }}
+    </h2>
+    <h2 v-else class="title">
+      {{ bot.name }}
+    </h2>
 
     <h3 v-if="loading" class="subtitle">
-      <font-awesome-icon icon="spinner" size="lg" spin></font-awesome-icon>
+      <FontAwesomeIcon icon="spinner" size="lg" spin />
     </h3>
 
     <div v-else class="container">
-      <config-editor v-if="displayCategories" :fields="fields" :model="model" :categories="categories"></config-editor>
-      <config-editor v-else :fields="fields" :model="model"></config-editor>
+      <ConfigEditor v-if="displayCategories" :fields="fields" :model="model" :categories="categories" />
+      <ConfigEditor v-else :fields="fields" :model="model" />
 
       <div class="form-item">
         <div class="form-item__buttons">
           <button class="button button--confirm" @click="onSave">
-            <font-awesome-icon v-if="saving" icon="spinner" spin></font-awesome-icon>
+            <FontAwesomeIcon v-if="saving" icon="spinner" spin />
             <span v-else>{{ $t('save') }}</span>
           </button>
-          <router-link tag="button" class="button button--confirm" :to="{ name: 'bot-copy', params: { bot: bot.name } }">
+          <RouterLink tag="button" class="button button--confirm" :to="{ name: 'bot-copy', params: { bot: bot.name } }">
             {{ $t('bot-copy') }}
-          </router-link>
+          </RouterLink>
 
           <button class="button button--link pull-right" @click="onDownload">
             {{ $t('download-raw-config') }}
