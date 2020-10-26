@@ -49,9 +49,7 @@
     "no-await-in-loop": "off",
     "no-shadow": "off",
     "no-plusplus": "off",
-    "no-continue": "off",
-    "no-console": "off",
-    "no-alert": "off",
+    "no-continue": "warn",
     "no-underscore-dangle": "off",
     "vue/script-indent": ["warn", 2, {
       "baseIndent": 1,
@@ -59,15 +57,9 @@
     }],
     "vue/html-indent": ["warn", 2],
     "vue/max-attributes-per-line": "off",
-    "vue/html-self-closing": ["warn", {
-      "html": {
-        "void": "never",
-        "normal": "never",
-        "component": "never"
-      }
-    }],
-    "vue/singleline-html-element-content-newline": "off",
-    "vue/comma-dangle": "warn"
+    "vue/component-name-in-template-casing": ["warn", "PascalCase", {
+      "registeredComponentsOnly": false
+    }]
   },
   "overrides": [
     {
